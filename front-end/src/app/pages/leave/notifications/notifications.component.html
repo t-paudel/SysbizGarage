@@ -1,0 +1,16 @@
+<div *ngFor = "let element of leaveHistory" class="col-md-12 dataBox" [ngClass]="{'compOffBox': element.utilityType==='Availed Comp-Off'}">
+  <div class="row" >
+    <div class="col-sm-3">{{element.employeeId}}</div>
+    
+    <div class="col-sm-3">
+      <b> From : </b>{{element.startDate|date:'d MMM'}}
+      <b> To : </b> {{element.endDate|date:'d MMM'}}
+    </div>
+
+    <div class="col-sm-3">{{element.reason}}</div>
+    <div class="col-sm-3">
+      <button type="button" class="btn btn-success" (click)="approveRequest(element)">Approve</button>
+      <button type="button" class="btn btn-danger" (click)="rejectRequest(element)">Reject</button>
+    </div>
+  </div>
+</div>

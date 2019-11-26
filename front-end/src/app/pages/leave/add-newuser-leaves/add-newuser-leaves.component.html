@@ -1,0 +1,45 @@
+<form class="center_div shadow-lg p-4 mb-4 bg-white rounded-lg well" [formGroup] = "formData" (ngSubmit)=addLeaves()>
+  <div class = "form-group">
+      <label for="empId">Emp Id : </label>
+      <input id="empId" class="form-control" placeholder="Enter Employee ID" formControlName = "empId">
+      
+      <div *ngIf="submitted && control.empId.errors" class="error">
+            <div *ngIf="control.empId.errors.required">Please enter Employee Id</div>
+      </div>
+  </div>
+
+  <div class = "form-group">
+      <label for="sickLeave">Sick Leave : </label>
+      <input id="sickLeave" class="form-control" placeholder="Enter Sick Leave" formControlName = "sickLeave">
+  </div>
+
+  <div class = "form-group">
+      <label for="casualLeave">Casual Leave : </label>
+      <input id="casualLeave" class="form-control" placeholder="Enter Casual Leave" formControlName = "casualLeave">
+  </div>
+
+  <div class = "form-group">
+      <label for="earnedLeave">Earned Leave : </label>
+      <input id="earnedLeave" class="form-control" placeholder="Enter Earned Leave" formControlName = "earnedLeave">
+  </div>
+
+  <div class = "form-group">
+      <label for="compOff">CompOff : </label>
+      <input id="compOff" class="form-control" placeholder="Enter compOff" formControlName = "compOff">
+  </div>
+
+  <div class = "form-group">
+      <label for="lop">LOP : </label>
+      <input id="lop" class="form-control" placeholder="Enter lop" formControlName = "lop">
+  </div>
+
+  <div class = "form-group">
+      <label for="maternityLeave">Maternity Leave : </label>
+      <input id="maternityLeave" class="form-control" placeholder="Enter Maternity Leave" formControlName = "maternityLeave">
+  </div>
+
+  <div class="col text-center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>

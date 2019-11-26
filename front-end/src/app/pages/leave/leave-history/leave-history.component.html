@@ -1,0 +1,41 @@
+<table mat-table [dataSource] = "dataSourceForHistory" class="mat-elevation-z8" style="width: 100%">
+            
+  <!--Utility Column-->
+  <ng-container matColumnDef="Utility">
+    <mat-header-cell *matHeaderCellDef>Utility</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.utilityType}} </mat-cell>
+  </ng-container>
+
+  <!--Start Date Column-->
+  <ng-container matColumnDef="Start Date">
+    <mat-header-cell *matHeaderCellDef>StartDate</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.startDate | date: 'mediumDate'}} </mat-cell>
+  </ng-container>
+
+  <!--End Date Column-->
+  <ng-container matColumnDef="End Date">
+      <mat-header-cell *matHeaderCellDef>End Date</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.endDate | date: 'mediumDate'}} </mat-cell>
+  </ng-container>
+  
+  <!--Leave Type Column-->
+  <ng-container matColumnDef="Leave Type">
+      <mat-header-cell *matHeaderCellDef>Leave Type</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.leaveType}} </mat-cell>
+  </ng-container>
+
+  <!--Reason Column-->
+  <ng-container matColumnDef="Reason">
+        <mat-header-cell *matHeaderCellDef>Reason</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.reason}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Status">
+    <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.approveStatus}} </mat-cell>
+  </ng-container>
+    
+  <mat-header-row *matHeaderRowDef="displayedColumnsForHistory"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumnsForHistory;"></mat-row>
+</table>
+

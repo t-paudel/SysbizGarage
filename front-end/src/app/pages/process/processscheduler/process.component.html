@@ -1,0 +1,133 @@
+<div>
+  <div>
+    <div *ngIf="se;let se" id="message">
+      <div style="padding: 5px;">
+        <div id="inner-message" class="alert alert-error">
+          <button type="button" class="close" data-dismiss="alert" (click)="onCloseClick()">&times;</button>
+          <h4>Sucessful</h4>
+          The Process got Triggered Succesfully.
+        </div>
+      </div>
+    </div>
+    <h1>Process Scheduler</h1>
+    <div class="row">
+      <div class="column">
+      <label for="attachmentLabel" style="width: 160px; text-align: right;  margin-right: 10px!important">Upload File</label>
+      <mat-form-field> <input [disabled]="disabled" id="tenantPhotoID" type="file" #photoInput style="display: none;margin-right: 10px"
+          (change)="getFiles($event)">
+        <input class="searchicon" matInput (click)="photoInput.click()" [(ngModel)]='filename'></mat-form-field>
+      <button class="button-color" mat-raised-button (click)="uploadFile()">ADD</button>
+    <ag-grid-angular id="table1" class="ag-theme-balham" [rowData]="rowData"
+      [columnDefs]="columnDefs" (gridReady)="onGridReady($event)" [rowSelection]="rowSelection"
+      (selectionChanged)="onSelectionChanged($event)"  [pagination]="true">
+    </ag-grid-angular>
+    <div class="pagination"><span class="textPageSize">Page Size:</span>
+      <input class="paginationSummary" type="text" (change)="onPageSizeChanged($event.target.value)" id="page-size" list="pageSizes" [(ngModel)]="pageSize">
+        <datalist id="pageSizes">
+          <option value="10">10</option>
+          
+  <option value="15" >15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="500">500</option>
+          <option value="1000">1000</option>
+          </datalist>
+       <span class="paginationSummary"><a class="button" (click)="onBtFirst()">{{first}}</a></span>
+           <span class="paginationSummary"> <a class="button" (click)="onBtPrevious()"> {{previous}} </a></span>
+          <span class="paginationSummary">Page:</span>
+         <input class="paginationSummary" type="text" [value]="pageNumber" (change)="fetchPage($event.target.value)"style="width:30px">
+         <span class="paginationSummary"> /</span><span class="paginationSummary" id="lbTotalPages">{{totalPages}}</span>
+       <span class="paginationSummary"> <a class="button" (click)="onBtNext()">{{next}}</a> </span>
+         
+          
+           <span class="paginationSummary"> <a class="button" (click)="onBtLast()" id="btLast">{{last}}</a></span>
+  </div> 
+    <button class="button-color" id="buttonRun" mat-raised-button (click)="run()">RUN</button>
+  </div>
+      <div class="column">
+          <ag-grid-angular id="table2" class="ag-theme-balham" [rowData]="rowData1"
+          [columnDefs]="columnDefs1" (gridReady)="onGridReady1($event)" [rowSelection]="rowSelection"
+          (selectionChanged)="onSelectionChanged1($event)" [pagination]="true">
+        </ag-grid-angular>
+  
+    <div class="pagination"><span class="textPageSize">Page Size:</span>
+      <input class="paginationSummary" type="text" (change)="onPageSizeChanged1($event.target.value)" id="page-size" list="pageSizes" [(ngModel)]="pageSize1">
+        <datalist id="pageSizes">
+          <option value="10">10</option>
+          
+  <option value="15" >15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="500">500</option>
+          <option value="1000">1000</option>
+          </datalist>
+       <span class="paginationSummary"><a class="button" (click)="onBtFirst1()">{{first}}</a></span>
+           <span class="paginationSummary"> <a class="button" (click)="onBtPrevious1()"> {{previous}} </a></span>
+          <span class="paginationSummary">Page:</span>
+         <input class="paginationSummary" type="text" [value]="pageNumber" (change)="fetchPage1($event.target.value)"style="width:30px">
+         <span class="paginationSummary"> /</span><span class="paginationSummary" id="lbTotalPages">{{totalPages1}}</span>
+       <span class="paginationSummary"> <a class="button" (click)="onBtNext1()">{{next}}</a> </span>
+         
+          
+           <span class="paginationSummary"> <a class="button" (click)="onBtLast1()" id="btLast">{{last}}</a></span>
+           </div>
+           <!-- <label for="processNameLabel" style="width: 160px; text-align: right;  margin-right: 10px!important">Process Name</label>
+           <input type="text" [value]="load()" id="processName">
+          <mat-radio-group aria-label="Frequency" [(ngModel)]="frequency" >Frequency
+            <mat-radio-button value="1">Time</mat-radio-button>
+            <mat-radio-button value="2">Interval</mat-radio-button>
+           </mat-radio-group>
+           <label for="processNameLabel" style="width: 160px; text-align: right;  margin-right: 10px!important">Status</label>
+  <select>
+    <option value="active">Active</option>
+    <option value="inActive">InActive</option>
+  </select> -->
+  </div> 
+  </div>
+ <!-- <mat-form-field style="margin-left:350px;">
+    <mat-select placeholder="Select Interval/Time">
+      <mat-option *ngFor="let options of option" [value]="options.value">
+        {{options.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field style="margin-left:100px;">
+    <mat-select placeholder="Select Status">
+      <mat-option *ngFor="let status of statuses" [value]="status.value">
+        {{status.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->
+  <!--  <mat-form-field style="margin-left:100px;">
+  <mat-select  placeholder="Select Status">
+    <mat-option *ngFor="let status of statuses" [value]="status.value">
+      {{status.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field> -->
+  <!-- <div fxFlex="25%" fxFlex.lt-md="50" fxFlex.md="33" fxLayout="row">
+			<label for="companyStartDateLabel" class="control-label required"
+				style="width: 160px; text-align: right;">Start Date</label>
+			<mat-form-field style="width: 180px;"> <input id="companyStartDateTab"
+				[attr.disabled]="disabled" (dateChange)="StartDateChange($event)"
+				#companyStartDateTab class="form-group" matInput class="form-group"
+				formControlName="companyStartDateTab" [matDatepicker]="picker1">
+			<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+			<mat-datepicker #picker1></mat-datepicker> </mat-form-field>
+			<div class="errorclass1" *ngIf="companystartdatevalid">Please
+				choose Start Date</div>
+		</div>
+		<div fxFlex="25%" fxFlex.lt-md="50" fxFlex.md="33" fxLayout="row">
+			<label for="companyEndDateLabel"
+				style="width: 160px; text-align: right;">Company End Date</label>
+			<mat-form-field style="width: 180px;"> <input id="companyEndDateTab"
+				[attr.disabled]="disabled"   (dateChange)="EndDateChange($event)" #companyEndDateTab matInput
+				formControlName="companyEndDateTab" [matDatepicker]="picker2">
+			<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+			<mat-datepicker #picker2></mat-datepicker> </mat-form-field>
+		</div> -->
+</div>

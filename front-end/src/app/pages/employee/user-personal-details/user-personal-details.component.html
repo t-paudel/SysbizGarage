@@ -1,0 +1,306 @@
+<div class = "center_div shadow-lg p-4 mb-4 bg-white rounded-lg">
+
+    <div class="header-align"><h2>User Personal Details</h2></div>
+
+    <form [formGroup]="personalDetailsForm" #formDirective="ngForm" (ngSubmit)="submitForm(formDirective)" class = "well">
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="firstName">First Name<b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-8"> 
+            <input id="firstName" class="form-control" placeholder="First Name" formControlName="firstName">
+          </div>
+        </div> 
+       
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.firstName.errors">Please enter First Name</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="middleName">Middle Name : </label>
+          </div>
+          
+          <div class="col-sm-8">
+            <input id="middleName" class="form-control" placeholder="Middle Name" formControlName="middleName">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="lastName">Last Name<b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-8"> 
+            <input id="lastName" class="form-control" placeholder="Last Name" formControlName="lastName">
+          </div>
+        </div>
+        
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.lastName.errors">Please enter Last Name</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="motherName">Mother's Name<b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-8"> 
+            <input id="motherName" class="form-control" placeholder="Mother's Name" formControlName="motherName">
+          </div>
+        </div>
+        
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.motherName.errors">Please Mother's Name</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="fatherName">Father's Name<b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-8">
+            <input id="fatherName" class="form-control" placeholder="Father's Name" formControlName="fatherName">
+          </div>
+        </div>
+
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.fatherName.errors">Please enter Father's Name</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="emailId">Email Id<b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-8">  
+            <input id="emailId" class="form-control" placeholder="Email Id" formControlName="emailId">
+          </div>
+        </div>
+
+        <div *ngIf="clicked" class="error">
+            <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-8">
+                <div *ngIf="control.emailId.errors">Please enter Email Id</div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+           <label for="dob">Date of birth<b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-8">
+            <mat-form-field class="example-full-width">
+                <input matInput [matDatepicker]="picker" placeholder="Date of birth" formControlName="dob">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker touchUi #picker></mat-datepicker>
+            </mat-form-field>
+            <!-- <input id="dob" class="form-control" placeholder="Date of birth" formControlName="dob"> -->
+          </div>
+        </div>
+
+        <div *ngIf="clicked" class="error">
+            <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-8">
+                <div *ngIf="control.dob.errors">Please enter Date of birth</div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">  
+            <label for="permanentAddress">Permanent Address<b style="color:red">*</b> :</label>
+          </div>
+          
+          <div class="col-sm-8">  
+            <textarea rows="3" id="permanentAddress" class="form-control" placeholder="Permanent Address" formControlName="permanentAddress"></textarea>
+          </div>
+        </div>
+
+        <div *ngIf="clicked" class="error">
+            <div class="row">
+              <div class="col-sm-4"></div>
+              <div class="col-sm-8">
+                <div *ngIf="control.permanentAddress.errors">Please enter Permanent Address</div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="permanentAddressPincode">Pincode<b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-8">   
+              <input id="permanentAddressPincode" class="form-control" placeholder="Pincode" formControlName="permanentAddressPincode">
+          </div>
+        </div>
+
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.permanentAddressPincode.errors">Please enter Pincode</div>  
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+           <label for="currentAddress">Current Address<b style="color:red">*</b> :</label>
+          </div>
+          <div class="col-sm-8">
+            <label class="form-check-label" for="sameAsAbove">
+              <input type="checkbox" class="form-check-input" id="sameAsAbove" (change)="populateAddress()" [(ngModel)]="autofill" [ngModelOptions]="{standalone: true}">Same as above
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-8">  
+            <textarea rows="3" id="currentAddress" class="form-control" placeholder="Current Address" formControlName="currentAddress"></textarea>
+          </div>
+        </div>
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.currentAddress.errors">Please enter Current Address</div>
+            </div>
+          </div>
+          </div> 
+
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="currentAddressPincode">Pincode<b style="color:red">*</b> :</label>
+          </div>
+        
+          <div class="col-sm-8">   
+            <input id="currentAddressPincode" class="form-control" placeholder="Pincode" formControlName="currentAddressPincode">
+          </div>
+        </div>
+
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.currentAddressPincode.errors">Please enter Pincode</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="contactNumber1">Contact Number<b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-4">   
+            <input id="contactNumber1" class="form-control" placeholder="Contact Number 1" formControlName="contactNumber1">
+          </div>
+
+          <div class="col-sm-4">    
+              <input id="contactNumber2" class="form-control" placeholder="Contact Number 2" formControlName="contactNumber2">
+          </div>
+        </div>
+
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.contactNumber1.errors || control.contactNumber2.errors">Please enter atleast one Contact Number</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="emergencyContactNumber1">Emergency Contact Number<b style="color:red">*</b> :</label>
+          </div>
+          
+          <div class="col-sm-4">  
+            <input id="emergencyContactNumber1" class="form-control" placeholder="Emergency Contact No. 1" formControlName="emergencyContactNumber1">
+          </div>
+
+          <div class="col-sm-4">   
+              <input id="emergencyContactNumber2" class="form-control" placeholder="Emergency Contact No. 2" formControlName="emergencyContactNumber2">
+          </div>
+        </div>
+
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.emergencyContactNumber1.errors || control.emergencyContactNumber2.errors">Please enter atleast one Emergency Contact Number</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="col text-center button-align">
+        <button type="submit" class="btn btn-primary" >Submit</button>
+      </div>
+
+    </form>
+</div>

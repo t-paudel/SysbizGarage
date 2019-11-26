@@ -1,0 +1,39 @@
+<form [formGroup]="availCompOffForm" (ngSubmit)="submitCompOffForm(formDirective)" #formDirective="ngForm"> 
+  <div formArrayName="dataRow">
+    <div *ngFor="let row of availCompOffForm.get('dataRow').controls; let i = index" [formGroupName]="i">
+      
+        <div class="check">
+            <mat-form-field appearance="outline" > 
+                <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker1" (dateInput)="enableEndDate($event,i)" placeholder="Start Date" formControlName="startDate">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+  
+          <div class = "check">
+              <mat-form-field appearance="outline">
+                <input matInput [matDatepickerFilter]="myFilter" [min]="getMinDate(i)" (dateInput)="checkDateOverlap()" [matDatepicker]="picker2" placeholder="End Date" formControlName="endDate">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+          </div>
+
+        <div class = "check">
+            <mat-form-field>
+                <textarea matInput placeholder="Reason" formControlName="reason"></textarea>
+            </mat-form-field>
+        </div>
+    
+        <div class="check">
+            <button type = "button" mat-raised-button (click) = "addRowForCompOffButtonClick()" color="accent" [disabled]="availCompOffForm.invalid">+</button>
+        </div>
+      
+        <div class="check" *ngIf="availCompOffForm.get('dataRow').length > 1">
+            <button type="button" mat-raised-button color="accent" (click)="deleteRowForCompOffButtonClick(i)">-</button>
+        </div>
+    </div>
+     
+  </div>
+  
+  <button type = "submit" mat-raised-button  color = "accent" [disabled]="availCompOffForm.invalid">Apply</button>
+</form> 

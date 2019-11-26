@@ -1,0 +1,42 @@
+#inner-message {
+    background-color: red;
+}
+#table1{
+    width: 420px; height: 420px; 
+}
+#table2{
+    width: 900px; height: 500px; 
+}
+#upload{
+    width: 160px; text-align: right;
+}
+.button-color{
+margin-left:10px;
+}
+#buttonRun{
+    margin-top:10px;
+}
+.column{
+float: left;
+width: 33%;
+margin-right:10px;
+}
+div.pagination{
+    margin: 0 auto;
+    margin-top:10px;
+    max-width: 700px;
+    height: 40px;
+  }
+input{
+        height: 21px!important;
+        width: 70px;
+}
+.paginationSummary{
+    margin-left: 15px;
+}
+#processName{
+    width:123px;
+    margin-right:10px;
+}
+
+  

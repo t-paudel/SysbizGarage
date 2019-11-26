@@ -1,0 +1,14 @@
+<table mat-table [dataSource] = "dataSourceForLeave" class="mat-elevation-z8" style="width: 100%">
+  <ng-container matColumnDef="Leave Type">
+    <mat-header-cell *matHeaderCellDef><h1> Leave Type </h1></mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.leaveType}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Available Leaves">
+    <mat-header-cell *matHeaderCellDef><h1> Available Leaves </h1></mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.noOfLeaves}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumnsForLeave"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumnsForLeave;"></mat-row>
+</table>

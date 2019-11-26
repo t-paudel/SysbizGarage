@@ -1,0 +1,122 @@
+<div class = "center_div shadow-lg p-4 mb-4 bg-white rounded-lg">
+
+    <div class="header-align"><h2>User Mapping Details</h2></div>
+
+    <form [formGroup]="userMappingForm" #formDirective="ngForm" (ngSubmit)="submitForm(formDirective)" class = "well">
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="userId">User Id <b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-8"> 
+            <select class="form-control" formControlName="userId">
+              <option>--</option>
+              <option *ngFor = "let name of userList">
+                {{ name }}
+              </option>
+            </select>
+            <!-- <input id="userId" class="form-control" placeholder="User Id" formControlName="userId"> -->
+          </div>
+        </div>
+        
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.userId.errors">Please select User Id</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="teamLead">Teamlead <b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-8"> 
+            <select class="form-control" formControlName="teamLead">
+              <option>--</option>
+              <option *ngFor = "let name of teamLeadList">
+                {{ name }}
+              </option>
+            </select>
+            <!-- <input id="teamLead" class="form-control" placeholder="Role Id" formControlName="teamLead"> -->
+          </div>
+        </div>
+        
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.teamLead.errors">Please select teamlead</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="supervisor">Supervisor<b style="color:red">*</b> :</label>
+          </div>
+
+          <div class="col-sm-8"> 
+            <select class="form-control" formControlName="supervisor">
+              <option>--</option>
+              <option *ngFor = "let name of supervisorList">
+                {{ name }}
+              </option>
+            </select>
+            <!-- <input id="supervisor" class="form-control" placeholder="Supervisor Id" formControlName="supervisor"> -->
+          </div>
+        </div> 
+        
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.supervisor.errors">Please select supervisor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-4">
+            <label for="manager">Manager <b style="color:red">*</b> :</label>
+          </div>
+          
+          <div class="col-sm-8">
+            <select class="form-control" formControlName="manager">
+              <option>--</option>
+              <option *ngFor = "let name of managerList">
+                {{ name }}
+              </option>
+            </select>
+            <!-- <input id="manager" class="form-control" placeholder="Manager Id" formControlName="manager"> -->
+          </div>
+        </div>
+
+        <div *ngIf="clicked" class="error">
+          <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+              <div *ngIf="control.manager.errors">Please select manager</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col text-center button-align">
+        <button type="submit" class="btn btn-primary" >Submit</button>
+      </div>
+
+    </form>
+</div>

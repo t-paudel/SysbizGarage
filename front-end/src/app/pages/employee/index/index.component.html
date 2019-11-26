@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="card-deck grid-hover">
+    <div class="card bg-primary" *ngFor = "let element of items; let i=index" (click)="clicked(i)">
+      <div class="card-body text-center">
+        <p></p>
+        <p></p>
+        <h2><p class="card-text"><b>{{ element.itemName }}</b></p></h2>
+        <p></p>
+        <p></p>
+      </div>
+    </div> 
+  </div>
+</div>

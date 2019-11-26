@@ -1,0 +1,12 @@
+{
+    "/api/users": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "loglevel": "debug"
+    },
+    "/api/leaves": {
+        "target": "http://localhost:8081",
+        "secure": false,
+        "loglevel": "debug"
+    }
+}

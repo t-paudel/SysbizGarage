@@ -1,0 +1,20 @@
+@import '~bootstrap-css-only/css/bootstrap.min.css';
+@import 'assets/styles/Antd/antd.cleanui';
+@import 'assets/styles/Bootstrap/bootstrap.cleanui';
+@import 'assets/styles/CleanUI/cleanui';
+@import 'assets/styles/Nprogress/nprogress.cleanui';
+@import 'assets/styles/Chartist/chartist.cleanui';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.ag-paging-panel.ag-unselectable{
+    display: none;
+}
+.calendar[_ngcontent-c23] .month-grid[_ngcontent-c23] .week-date.disabled[_ngcontent-c23] {
+    color: #bfbfbf;
+}
+.calendar[_ngcontent-c23] .month-grid[_ngcontent-c23] .today[_ngcontent-c23] {
+    /* font-weight: bold; */
+    background-color: burlywood!important;
+}
+.calendar[_ngcontent-c23] .month-grid[_ngcontent-c23] .week-date.selected[_ngcontent-c23] {
+    background-color: lightskyblue;
+}

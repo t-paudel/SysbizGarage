@@ -1,0 +1,50 @@
+table 
+{
+    width: 40%;
+}
+
+mat-form-field 
+{
+    margin-right: 12px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 50%;
+  }
+
+  .check
+  {
+      display : inline-block;
+  }
+
+  .check1
+  {
+      text-align: right;
+  }
+
+.error
+{
+    margin:0px 10px 20px 10px;
+    border-left:1px solid red;
+    padding : 10px;
+    font-size: 12px;
+    color:red;
+    font-weight: 600;
+    display: inline-block;
+}
+
+
+.applied-leave .mat-calendar-body-cell-content{
+    border-bottom : 3px solid crimson;
+}
+.mat-calendar-body-cell-content
+{
+    border-radius: 35% 35% 0 0 !important; 
+    border-width: 2px !important;
+}
